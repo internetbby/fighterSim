@@ -5,11 +5,9 @@ namespace FighterSim
     public class Weapon
     {
 
-        private object[,]array =new object[3,3]{{"bow",25,1},{"sword",10,0},{"club",40,2} };
-
+        private object[,]array =new object[3,2]{{"bow",25},{"sword",10},{"club",40} };
          private Random generator = new Random();
-
-         private int r = 0;
+        private int r = 0;
 
         public int weaponType;
 
@@ -30,7 +28,7 @@ namespace FighterSim
 
                 r = generator.Next(2);
 
-                if (r == Convert.ToInt16(array[0,2])){
+                if (r == 1){
                     isHit = true;
 
                 }
@@ -52,7 +50,7 @@ namespace FighterSim
 
                 r = generator.Next(3);
 
-                if (r == Convert.ToInt16(array[2,2])){
+                if (r == 1){
                     isHit = true;
 
                 }
@@ -65,4 +63,6 @@ namespace FighterSim
         }
 
     }
+
+
     }

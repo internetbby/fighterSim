@@ -5,17 +5,28 @@ namespace FighterSim
     public class Fighter
     {
 
-        private Weapon w1= new Weapon();
+        public Weapon w1= new Weapon();
 
         
-        private int hp = 100; 
+        public int hp = 100; 
         public string name; 
 
-        public int weaponChose ; 
+        private int weaponChose ; 
 
         public Fighter(){
             name = Console.ReadLine();
 
+            weaponChose = w1.weaponType;
+
+        }
+
+        public void Attack(Fighter target)
+        {
+            if (w1.isHit == true){
+                target.hp = target.hp - w1.weaponAttack;
+            }
+
+            System.Console.WriteLine("HERO " + target.name + " HP LEFT: " + target.hp);
         }
     }   
     
